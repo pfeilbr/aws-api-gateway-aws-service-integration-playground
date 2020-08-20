@@ -1,0 +1,13 @@
+{
+    "Entries": [
+        {
+            "Source": "com.mycompany.myapp",
+            "Resources": [
+                ""
+            ],
+            "DetailType": "event",
+            "Detail": "{\"key\": \"value\"}",
+            "EventBusName": "default"
+        }
+    ]
+}
