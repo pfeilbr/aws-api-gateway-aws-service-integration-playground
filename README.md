@@ -5,13 +5,17 @@ lambda in the middle (reduces latency and costs).
 
 HTTP REST APIs are the most common integration pattern.  API Gateway is AWS managed service for creating REST APIs.  It allows us to apply security, throttling, logging, etc. to our APIs.  In some cases an API is simply a passthrough to a backend AWS service.  The typical approach is to have API Gateway invoke a lambda, which then contains the code to call th target AWS service.  If you don't need to perform any additional logic to the request prior to calling the backend AWS service, you may be able to use an API Gateway AWS service integration, which can directly invoke the AWS service.  This simplifies the architecture, reduces request latency and reduces costs.
 
-## Prerequisites
+---
+
+
+## Demo
+
+**Prerequisites**
 
 * [An AWS account](https://aws.amazon.com/)
 * [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/installing.html)
 * [SAM CLI](https://aws.amazon.com/serverless/sam/)
 
-## Demo
 
 ```sh
 # clone repo
@@ -60,9 +64,9 @@ setting the required headers to invoke the PutEvents action
 ```yaml
 RequestTemplates:
     application/json: |
-    $input.json("$")
-    #set($context.requestOverride.header.X-Amz-Target ="AWSEvents.PutEvents")
-    #set($context.requestOverride.header.Content-Type ="application/x-amz-json-1.1")
+        $input.json("$")
+        #set($context.requestOverride.header.X-Amz-Target ="AWSEvents.PutEvents")
+        #set($context.requestOverride.header.Content-Type ="application/x-amz-json-1.1")
 ```
 
 ## Resources
