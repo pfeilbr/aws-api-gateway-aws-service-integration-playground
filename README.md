@@ -16,6 +16,7 @@ HTTP REST APIs are the most common integration pattern.  API Gateway is AWS mana
 * [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/installing.html)
 * [SAM CLI](https://aws.amazon.com/serverless/sam/)
 
+**Running**
 
 ```sh
 # clone repo
